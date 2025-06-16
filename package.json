@@ -4,9 +4,8 @@
   "description": "AI-powered CS2 music kit recommender based on your feelings",
   "main": "app.py",
   "scripts": {
-    "start": "python start.py",
+    "start": "python app.py",
     "dev": "python app.py",
-    "test": "python test.py",
     "install-deps": "pip install -r requirements.txt"
   },
   "keywords": [
@@ -19,10 +18,10 @@
     "python"
   ],
   "author": "CS2 Community",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/cs2-music-kit-recommender.git"
+    "url": "https://github.com/omgpizzatnt/cs2-music-kit-recommender.git"
   },
   "engines": {
     "python": ">=3.8"
