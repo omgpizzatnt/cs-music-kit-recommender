@@ -1,0 +1,2 @@
+# This is a placeholder file for the default music kit image
+# In a real deployment, you would add a default-kit.png image here

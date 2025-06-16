@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Music Kit Recommender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">CS2 Music Kit Recommender</h1>
+            <p class="subtitle">Find the perfect music kit based on your current feelings</p>
+        </header>
+
+        <!-- Loading Screen -->
+        <div id="loadingScreen" class="loading-screen hidden">
+            <div class="loading-content">
+                <div class="cs-logo">CS2</div>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p id="loadingText" class="loading-text">Preparing recommendation...</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent" class="main-content">
+            <!-- Feelings Form -->
+            <div id="feelingsForm" class="feelings-form">
+                <h2>How are you feeling right now?</h2>                <div class="slider-group">
+                    <label for="motivation">Motivation Axis (X-Axis)</label>
+                    <div class="slider-container">
+                        <span class="slider-label">Performance</span>
+                        <input type="range" id="motivation" name="motivation" min="0" max="100" value="50" class="slider">
+                        <span class="slider-label">Entertainment</span>
+                    </div>
+                    <span class="slider-value" id="motivationValue">50</span>
+                </div>
+
+                <div class="slider-group">
+                    <label for="identity">Identity Axis (Y-Axis)</label>
+                    <div class="slider-container">
+                        <span class="slider-label">Individualist</span>
+                        <input type="range" id="identity" name="identity" min="0" max="100" value="50" class="slider">
+                        <span class="slider-label">Conformist</span>
+                    </div>
+                    <span class="slider-value" id="identityValue">50</span>
+                </div><div class="slider-group">
+                    <label for="style">Style Axis (Z-Axis)</label>
+                    <div class="slider-container">
+                        <span class="slider-label">Aggression</span>
+                        <input type="range" id="style" name="style" min="0" max="100" value="50" class="slider">
+                        <span class="slider-label">Composure</span>
+                    </div>
+                    <span class="slider-value" id="styleValue">50</span>
+                </div>
+
+                <div class="slider-group">
+                    <label for="status">Status Axis (W-Axis)</label>
+                    <div class="slider-container">
+                        <span class="slider-label">Pragmatism</span>
+                        <input type="range" id="status" name="status" min="0" max="100" value="50" class="slider">
+                        <span class="slider-label">Flex</span>
+                    </div>
+                    <span class="slider-value" id="statusValue">50</span>
+                </div>
+
+                <div class="mood-group">
+                    <label>Current Mood</label>
+                    <div class="mood-buttons">
+                        <button type="button" class="mood-btn" data-mood="excited">😄 Excited</button>
+                        <button type="button" class="mood-btn" data-mood="focused">🎯 Focused</button>
+                        <button type="button" class="mood-btn" data-mood="chill">😌 Chill</button>
+                        <button type="button" class="mood-btn" data-mood="competitive">⚔️ Competitive</button>
+                        <button type="button" class="mood-btn" data-mood="angry">😠 Angry</button>
+                        <button type="button" class="mood-btn active" data-mood="neutral">😐 Neutral</button>
+                    </div>
+                </div>
+
+                <button id="getRecommendation" class="recommend-btn">
+                    <span class="btn-text">Get My Music Kit</span>
+                    <span class="btn-icon">🎵</span>
+                </button>
+            </div>            <!-- Recommendation Result -->
+            <div id="recommendationResult" class="recommendation-result hidden">
+                <h2>Your Perfect Music Kit</h2>
+                <div class="music-kit-card">
+                    <div class="kit-image-container">
+                        <img id="kitImage" src="" alt="Music Kit" class="kit-image">
+                        <div class="kit-rarity" id="kitRarity"></div>
+                        <div class="ai-badge" id="aiBadge">🤖 AI Powered</div>
+                    </div>
+                    <div class="kit-details">
+                        <h3 id="kitName" class="kit-name"></h3>
+                        <p id="kitDescription" class="kit-description"></p>
+                        
+                        <div class="ai-explanation">
+                            <h4>🎯 Why this kit?</h4>
+                            <p id="aiExplanation"></p>
+                        </div>                        
+                        <div class="mood-match" id="moodMatch">
+                            <h4>🎭 Mood Match</h4>
+                            <p id="moodMatchText"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="tryAgain" class="secondary-btn">🔄 Try Again</button>
+                    <button id="shareResult" class="primary-btn">📱 Share Result</button>
+                    <button id="exploreMore" class="accent-btn">🎵 Explore More Kits</button>
+                    <button id="searchYoutube" class="youtube-btn">📺 Search on YouTube</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for the CS2 community | Data from <a href="https://github.com/ByMykel/CSGO-API" target="_blank">ByMykel/CSGO-API</a></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

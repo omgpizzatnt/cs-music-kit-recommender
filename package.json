@@ -1,0 +1,30 @@
+{
+  "name": "cs2-music-kit-recommender",
+  "version": "1.0.0",
+  "description": "AI-powered CS2 music kit recommender based on your feelings",
+  "main": "app.py",
+  "scripts": {
+    "start": "python start.py",
+    "dev": "python app.py",
+    "test": "python test.py",
+    "install-deps": "pip install -r requirements.txt"
+  },
+  "keywords": [
+    "cs2",
+    "counter-strike",
+    "music-kit",
+    "recommender",
+    "ai",
+    "flask",
+    "python"
+  ],
+  "author": "CS2 Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/cs2-music-kit-recommender.git"
+  },
+  "engines": {
+    "python": ">=3.8"
+  }
+}
