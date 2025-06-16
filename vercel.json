@@ -11,8 +11,5 @@
       "src": "/(.*)",
       "dest": "app.py"
     }
-  ],
-  "env": {
-    "GOOGLE_AI_API_KEY": "@google_ai_api_key"
-  }
+  ]
 }
